@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ade1b606eb01891c6c39273e62297bfbd022efca99cd5f380767e9121122f7b5
+
+name:           haskell-test
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/dabliuw22/haskell-test#readme>
+homepage:       https://github.com/dabliuw22/haskell-test#readme
+bug-reports:    https://github.com/dabliuw22/haskell-test/issues
+author:         Will Leyton
+maintainer:     wleylop22@gmail.com
+copyright:      2020 Will Leyton
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dabliuw22/haskell-test
+
+library
+  exposed-modules:
+      ADT
+      DataStructures
+      Functions
+      PatternMatching
+      TypeClasses
+  other-modules:
+      Paths_haskell_test
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable haskell-test-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_haskell_test
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , haskell-test
+  default-language: Haskell2010
+
+test-suite haskell-test-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_haskell_test
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , haskell-test
+    , hspec
+  default-language: Haskell2010
