@@ -18,7 +18,7 @@ instance Service B where
 serviceRun :: Service a => a -> IO ()
 serviceRun = print . run
 
-class ServiceWithEffect m where
+class Monad m => ServiceWithEffect m where
   execute :: String -> m String
 
 instance ServiceWithEffect IO where
