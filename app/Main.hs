@@ -5,11 +5,16 @@ import DataStructures
 import Functions
 import PatternMatching
 import TypeClasses
+import Control.Monad
+import Control.Monad.Except
 
 readInts :: String -> [Int]
 -- words: Create a Array of String from String
 -- read: Casts strings to another type
 readInts s = let ws = words s in map read ws
+
+r = head
+--r t = fromS 
 
 minMax :: Ord a => [a] -> Maybe(a, a)
 -- foldr: Reduction function, foldr(function, initValue, list)
@@ -36,8 +41,16 @@ loadFile = do
   print range
 
 main :: IO ()
-main = loadFile
+main = do 
+  e <- execute "hello4"
+  print e
+--main = safeDivIo 4 2 `catchError` (\e -> return 1) >>= print
 
-f = do
-  i <- [1..]
-  return (i * 2)
+safeDivIo :: Int -> Int -> IO Int
+safeDivIo a b = do
+  return (a `div` b)
+
+safeDiv :: Int -> Int -> Maybe Int
+safeDiv a b =  do
+  guard $ b /= 0 -- guard requires Control.Monad, returns Pure Monad if condition is met, but Empty Monad.
+  return (a `div` b)

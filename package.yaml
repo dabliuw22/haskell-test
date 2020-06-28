@@ -20,7 +20,12 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/dabliuw22/haskell-test#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+- base
+- classy-prelude
+
+default-extensions:
+- NoImplicitPrelude
+- OverloadedStrings
 
 library:
   source-dirs: src
@@ -35,6 +40,8 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - haskell-test
+    - mtl
+    - async
 
 tests:
   haskell-test-test:

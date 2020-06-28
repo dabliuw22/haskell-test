@@ -1,4 +1,6 @@
-module TypeClasses (tc) where
+module TypeClasses where
+
+import Data.Char
 
 class Service a where
   run :: a -> (Integer, String)
@@ -16,7 +18,18 @@ instance Service B where
 serviceRun :: Service a => a -> IO ()
 serviceRun = print . run
 
+class ServiceWithEffect m where
+  execute :: String -> m String
+
+instance ServiceWithEffect IO where
+  execute s = pure (map toUpper s)
+
+serviceWithEffectExecute :: ServiceWithEffect m => String -> m String
+serviceWithEffectExecute = execute
+
 tc :: IO ()
 tc = do
   serviceRun $ A 1
   serviceRun $ B (1, 2)
+  a <- serviceWithEffectExecute $ "hello"
+  print a
