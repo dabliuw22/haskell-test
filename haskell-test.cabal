@@ -30,6 +30,7 @@ library
       ADT
       DataStructures
       Functions
+      Functors
       PatternMatching
       TypeClasses
   other-modules:
