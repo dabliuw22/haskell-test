@@ -3,6 +3,7 @@ module Main where
 import ADT
 import DataStructures
 import Functions
+import Monads
 import PatternMatching
 import TypeClasses
 import Control.Monad
@@ -44,6 +45,7 @@ main :: IO ()
 main = do 
   e <- execute "hello4"
   print e
+  md
 --main = safeDivIo 4 2 `catchError` (\e -> return 1) >>= print
 
 safeDivIo :: Int -> Int -> IO Int

@@ -21,10 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/dabl
 
 dependencies:
 - base
-- classy-prelude
+- aeson
+- time
+- text
 
 default-extensions:
-- NoImplicitPrelude
 - OverloadedStrings
 
 library:
