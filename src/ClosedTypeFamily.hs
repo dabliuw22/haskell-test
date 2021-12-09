@@ -12,7 +12,6 @@
 module ClosedTypeFamily where
 
 import Data.Kind (Type)
-import Text.Show.Functions
 
 type HList :: [Type] -> Type -- StandaloneKindSignatures
 data HList xs where -- GADTs
