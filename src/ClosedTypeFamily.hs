@@ -11,10 +11,10 @@
 -- Closed type families: to implement operations on GADTs.
 module ClosedTypeFamily where
 
-import Data.Kind
+import Data.Kind (Type)
 import Text.Show.Functions
 
-type HList :: [*] -> * -- StandaloneKindSignatures
+type HList :: [Type] -> Type -- StandaloneKindSignatures
 data HList xs where -- GADTs
   HNil :: HList '[]
   (:::) :: x -> HList xs -> HList (x : xs) -- TypeOperators
