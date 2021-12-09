@@ -1,14 +1,14 @@
-name:                haskell-test
-version:             0.1.0.0
-github:              "dabliuw22/haskell-test"
-license:             BSD3
-author:              "Will Leyton"
-maintainer:          "wleylop22@gmail.com"
-copyright:           "2020 Will Leyton"
+name: haskell-test
+version: 0.1.0.0
+github: "dabliuw22/haskell-test"
+license: BSD3
+author: "Will Leyton"
+maintainer: "wleylop22@gmail.com"
+copyright: "2020 Will Leyton"
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
+  - ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -17,41 +17,42 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/dabliuw22/haskell-test#readme>
+description: Please see the README on GitHub at <https://github.com/dabliuw22/haskell-test#readme>
 
 dependencies:
-- base
-- aeson
-- time
-- text
+  - base
+  - aeson
+  - time
+  - text
+  - bytestring
 
 default-extensions:
-- OverloadedStrings
+  - OverloadedStrings
 
 library:
   source-dirs: src
 
 executables:
   haskell-test-exe:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - haskell-test
-    - mtl
-    - async
+      - haskell-test
+      - mtl
+      - async
 
 tests:
   haskell-test-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - haskell-test
-    - hspec
+      - haskell-test
+      - hspec
