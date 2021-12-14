@@ -1,9 +1,10 @@
 module Functors where
 
-data Data = Data String Int String deriving Show
+data Data = Data String Int String deriving (Show)
 
 string :: Applicative f => String -> f String
 string = pure
+
 int :: Applicative f => Int -> f Int
 int = pure
 
